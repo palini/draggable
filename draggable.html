@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<title> Draggable js</title>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	
+	<script type ="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<script type ="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+	<style>
+	#square{
+
+		width : 100px;
+		height : 100px;
+		background-color: green;
+	}
+	#resizeable{
+		width : 50px;
+		height : 50px;
+		background-color: red;
+	}
+	#target{
+		width : 500px;
+		height : 500px;
+		background-color: yellow;
+	}
+	</style>
+
+
+</head>
+<body>
+	<div id = "resizeable">Resize me </div>
+	<div id = "square">Drag me around</div>
+	
+	<div id = "target"></div>
+	
+	<script>
+			$("#square").draggable();
+			//$("#resizeable").resizable();
+			$("#target").droppable({
+				drop: function(ui,event){
+					$("#target").css("background-color","red");
+				}
+			});
+	</script>
+		
+</body>
+</html>
